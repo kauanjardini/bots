@@ -32,7 +32,7 @@ fi
 
 clear
 
-figlet -c -f slant -t 'KauanJardini' | lolcat 
+figlet -c -f slant -t 'Kauanjardini' | lolcat 
 
 echo  "Seja bem-vindo ao menu de bots de whatsapp o que deseja? \n\n" | lolcat -a -d 50 
 
@@ -47,15 +47,17 @@ echo $CYAN"[4] Instalar Kratos-bot"
 sleep 0.5
 echo $CYAN"[5] Instalar MhankBar-bot"
 sleep 0.5
-echo $CYAN"[6] Instalar Arya-bot"
+echo $CYAN"[7] Instalar Arya-bot"
 sleep 0.5
-echo $CYAN"[7] Instalar ferramenta de puxar dados"
+echo $CYAN"[6] Instalar Kratos-bot2.0"
 sleep 0.5
-echo $CYAN"[8] Instalar o ngrok"
+echo $CYAN"[8] Instalar ferramenta de puxar dados"
 sleep 0.5
-echo $CYAN"[9] Instalar rastreador de localização"
+echo $CYAN"[9] Instalar o ngrok"
 sleep 0.5
-echo $CYAN"[10] Sair"
+echo $CYAN"[10] Instalar rastreador de localização"
+sleep 0.5
+echo $CYAN"[11] Sair"
 echo $PURPLE
 sleep 0.5
 
@@ -176,6 +178,28 @@ if [ $opts = "6" ]; then
 	clear
 	echo $GREEN "[!] Baixando o bot aguarde..."$NC
 	sleep 3
+	if [ -e "$HOME/kratosbot2.0" ]; then
+		clear
+		echo $YELLOW"O bot já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f Arya-Bot) e tente novamente"
+		exit
+	fi
+	cd
+	apt install nodejs > /dev/null 2> /dev/null
+	apt install ffmpeg > /dev/null 2> /dev/null
+	apt install imagemagick > /dev/null 2> /dev/null
+	git clone https://github.com/KRATOSmdzkk23/kratosbot2.0 > /dev/null 2> /dev/null
+	clear
+	cd kratosbot2.0
+	npm install > /dev/null 2> /dev/null
+	clear
+	echo $GREEN"[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
+	echo
+	echo $YELLOW "cd .. && cd kratosbot2.0 && npm start"$NC
+fi
+if [ $opts = "7" ]; then
+	clear
+	echo $GREEN "[!] Baixando o bot aguarde..."$NC
+	sleep 3
 	if [ -e "$HOME/Arya-Bot" ]; then
 		clear
 		echo $YELLOW"O bot já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f Arya-Bot) e tente novamente"
@@ -194,8 +218,7 @@ if [ $opts = "6" ]; then
 	echo
 	echo $YELLOW "cd .. && cd Arya-Bot && npm start"$NC
 fi
-
-if [ $opts = "7" ]; then
+if [ $opts = "8" ]; then
 	clear
 	echo $GREEN "[!] Instalando a ferramenta aguarde..."$NC
 	sleep 3
@@ -215,7 +238,7 @@ if [ $opts = "7" ]; then
 
 fi
 
-if [ $opts = "8" ]; then
+if [ $opts = "9" ]; then
 	clear
 	echo $GREEN "[!] Instalando o ngrok aguarde..."$NC
 	sleep 3
@@ -236,7 +259,7 @@ if [ $opts = "8" ]; then
 
 fi
 
-if [ $opts = "9" ]; then
+if [ $opts = "10" ]; then
 	clear
 	echo $GREEN "[!] Instalando a ferramenta aguarde..."$NC
 	sleep 3
@@ -257,7 +280,7 @@ if [ $opts = "9" ]; then
 
 fi
 
-if [ $opts = "10" ]; then
+if [ $opts = "11" ]; then
 	echo $RED "FECHANDO..."
 	sleep 3
 	exit
