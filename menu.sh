@@ -208,12 +208,15 @@ if [ $opts = "8" ]; then
 		exit
 	fi
 	cd
+        apt install wget > /dev/null 2> /dev/null
+        apt install git > /dev/null 2> /dev/null
 	apt install nodejs > /dev/null 2> /dev/null
 	apt install ffmpeg > /dev/null 2> /dev/null
 	apt install imagemagick > /dev/null 2> /dev/null
 	git clone https://github.com/Meliodas-rai/Bot > /dev/null 2> /dev/null
 	clear
-	cd kratosbot2.0
+	cd Bot
+        git pull
 	npm install > /dev/null 2> /dev/null
 	clear
 	echo $GREEN"[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
